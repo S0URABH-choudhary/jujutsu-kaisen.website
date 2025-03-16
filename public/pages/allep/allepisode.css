@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#32292A;
+    --secondary-color:#4F4544;
+    --tertiory-color:#B92A1C;
+}
+
+html,body{
+    background-color: var(--primary-color);
+    color: white;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 2rem;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+#allepisode-container {
+    --number-of-columns: 4;
+    display: grid;
+    grid-template-columns: repeat(var(--number-of-columns), minmax(0, 1fr));
+    grid-gap: 1.5rem;
+    gap: 1.5rem;
+}
+.episode-container{
+    position: relative;
+    height: 15em; 
+}
+.episode-thumbnail{
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+    height: 60%;
+    cursor: pointer;
+    width: 100%;
+}
+.episode-details{
+    position: relative;
+    height: 40%;
+    width: 100%;
+    line-height: 1.9rem;
+}
+.episode-details h2{
+    font-size: 130%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight:  lighter;
+}
+
+.episode-details h4{
+    font-weight: lighter;
+    color: rgba(245, 245, 245, 0.556);
+}
+.episode-details h3{
+    margin-top: 8px;
+}
+.episode-details i{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 6px;
+}
