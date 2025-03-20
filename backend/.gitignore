@@ -1,0 +1,21 @@
+# Ignore node_modules (dependencies)
+node_modules/
+
+# Ignore environment variables
+.env
+
+# Ignore log files
+logs/
+*.log
+
+# Ignore database files (if using SQLite)
+*.sqlite
+*.sqlite3
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore build artifacts
+dist/
+build/
