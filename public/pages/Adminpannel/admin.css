@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+:root{
+    --primary-color:#32292A;
+    --secondary-color:#4F4544;
+    --tertiory-color:#B92A1C;
+}
+
+main{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+#addepisode-form{
+    --number-of-columns: 2;
+    background-color: white;
+    position: absolute;
+    height: 90%;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    transform: translate(-50% , -50%);
+    z-index: 99;
+    display: none;
+    text-align: center;
+    gap: 1.5rem;
+    grid-template-columns: repeat(var(--number-of-columns) ,minmax(45px ,1fr));
+}
+.close{
+    display: block;
+    font-size: larger;
+    grid-column: 1 / span 2;
+    justify-self: end;
+}
+#addepisode-form input,textarea{
+    padding-inline: 20px;
+}
+#discription{
+    grid-column: 1 / 3;
+    padding: 10px;
+}
+#submit-buttom{
+    grid-column: 1 / 3;
+}
+#dateform{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    display: none;
+    transform: translate( -50% , -50%);
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px;
+    gap: 20px;
+}
+#dateform h3,input{
+    font-size: larger;
+}
+#dateform button{
+    padding: 15px;
+    background-color: var(--tertiory-color);
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 30px;
+    padding: 20px 30px;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+}
+
+#controlls{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 16px 32px;
+    gap: 15px;
+}
+
+.button-controll{
+    padding: 10px 15px;
+    background-color: var(--tertiory-color);
+    outline: transparent;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    .id-group{
+      text-align: center;
+      width: 50px;
+    }
+    .edit-icon{
+        color: rgb(15, 197, 15);
+        cursor: pointer;
+        margin-left: 10px;
+    }
+    .delete-icon{
+        color: rgb(219, 6, 6);
+        cursor: pointer;
+        margin-left: 10px;
+    }

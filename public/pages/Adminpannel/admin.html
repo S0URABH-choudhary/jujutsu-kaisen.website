@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>admin pannel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <main>
+      <form id="addepisode-form">
+        <i class="fa-solid fa-xmark close" id="close-button" onclick="openclose('addepisode-form')"></i>
+        <input id="anime-name" type="text"  placeholder="anime's name"/>
+
+        <input id="episode-name" type="text" placeholder="Episode's name"/>
+
+        <input id="episode-number" type="text" placeholder="Episode's number"/>
+
+        <input id="season-number" type="text" placeholder="season's number"/>
+
+        <input id="episode-link" type="text" placeholder="video link"/>
+
+        <input id="thumbnail-link" type="text" placeholder="thumbnail link"/>
+
+        <div><label for="sub">sub Available</label>
+          <input id="sub" type="checkbox" /></div>
+
+        <div><label for="dub">dub Available</label>
+          <input id="dub" type="checkbox" /></div>
+
+        <textarea name="" id="discription" cols="80" rows="10" placeholder="discription"></textarea>
+
+        <button id="submit-buttom">Upload</button>
+      </form>
+      <form id="dateform">
+        <i class="fa-solid fa-xmark close" id="close-button" onclick="openclose('dateform')"></i>
+        <h3>Set date:</h3>
+        <input type="date">
+        <button>set date</button>
+      </form>
+      <nav>
+        <a href="#">welcome saurabh</a>
+        <a href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
+      </nav>
+      <div id="controll-container">
+        <div id="controlls">
+          <button class="button-controll" onclick="openclose('addepisode-form')">add episode</button>
+          <button class="button-controll" onclick="openclose('dateform')">update date</button>
+        </div>
+        <table>
+          <colgroup>
+            <col class="id-group" />
+            <col class="id-name" />
+            <col class="id-option" />
+          </colgroup>
+          <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>OPTION</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Maria Anders</td>
+            <td>
+              <i class="fa-solid fa-pen edit-icon"></i>
+              <i class="fa-solid fa-trash delete-icon"></i>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>
