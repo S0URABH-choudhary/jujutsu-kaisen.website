@@ -1,21 +1,21 @@
-# Ignore node_modules (dependencies)
+# ignore's node_modules (dependencies)
 node_modules/
 
-# Ignore environment variables
+# ignore's environment variables
 .env
 
-# Ignore log files
+# ignore's log files
 logs/
 *.log
 
-# Ignore database files (if using SQLite)
+# ignore's database files (if using SQLite)
 *.sqlite
 *.sqlite3
 
-# Ignore system files
+# ignore's system files
 .DS_Store
 Thumbs.db
 
-# Ignore build artifacts
+# ignore's build artifacts
 dist/
 build/
