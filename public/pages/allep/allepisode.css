@@ -89,6 +89,7 @@ body::-webkit-scrollbar{
         
     }
     #jjk-tittle{
+        width: 100vw;
         padding: 20px;
     }
 

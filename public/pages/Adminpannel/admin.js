@@ -24,7 +24,7 @@ form.addEventListener("submit", async function (event) {
         description: document.getElementById("discription").value,
     };
     try {
-        let response = await fetch("http://localhost:5000/api/episodes", {
+        let response = await fetch("https://jujutsu-kaisen-website.onrender.com/api/episodes/api/episodes", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
