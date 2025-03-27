@@ -1,19 +1,16 @@
-
-
-
 let openclose = (elem) => {
     let formid = document.getElementById(elem)
-    if(getComputedStyle(formid).display == "grid"){
+    if (getComputedStyle(formid).display == "grid") {
         formid.style.display = "none";
-    }else{
+    } else {
         formid.style.display = "grid";
     }
-}
+};
 
-let form = document.getElementById("addepisode-form") 
+let form = document.getElementById("addepisode-form");
 
 form.addEventListener("submit", async function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     let formData = {
         anime: document.getElementById("anime-name").value,
@@ -22,7 +19,7 @@ form.addEventListener("submit", async function (event) {
         season: document.getElementById("season-number").value,
         episodeSrc: document.getElementById("episode-link").value,
         thumbnail: document.getElementById("thumbnail-link").value,
-        subAvailable: document.getElementById("sub").checked, 
+        subAvailable: document.getElementById("sub").checked,
         dubAvailable: document.getElementById("dub").checked,
         description: document.getElementById("discription").value,
     };
@@ -46,7 +43,36 @@ form.addEventListener("submit", async function (event) {
         }
     } catch (error) {
         console.error("Error submitting form:", error);
-    }}
+    }
+}
 
-    
+
 );
+
+
+let dateform = document.getElementById("dateform");
+
+dateform.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let releasedate = document.getElementById("episode-release-date").value;
+    if (releasedate) {
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let dateobject = new Date(releasedate);
+        const date = dateobject.getDate();
+        const month = monthNames[dateobject.getMonth()];
+        
+        const data = [ date, month]
+
+        try{
+            
+
+        }catch{
+
+        }
+
+
+    }else{
+        alert("date cannot be empty")
+    }
+});
+
