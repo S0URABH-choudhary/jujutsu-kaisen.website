@@ -32,7 +32,7 @@ body::-webkit-scrollbar{
     align-items: center;
     padding: 30px;
     height: 50px;
-    background-color: var(--tertiory-color);
+    background-color: var(--secondary-color);
 }
 #episode-container{
     position: relative;
@@ -105,8 +105,4 @@ body::-webkit-scrollbar{
         width: 60%;
     }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 883253986b1ae2117659e7d9f477791f7a61a78c
