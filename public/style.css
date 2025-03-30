@@ -528,7 +528,7 @@ button {
     color: black;
 }
 
-@media (width <= 600px) {
+@media (width <= 768px) {
     
     .main{
         overflow-x: hidden;

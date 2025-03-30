@@ -24,7 +24,7 @@ form.addEventListener("submit", async function (event) {
         description: document.getElementById("discription").value,
     };
     try {
-        let response = await fetch("https://jujutsu-kaisen-website.onrender.com/api/episodes", {
+        let response = await fetch(`${CONFIG.API_URL}/api/episodes`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -64,7 +64,7 @@ dateform.addEventListener("submit", async (event) => {
         const data = {date, month}
 
         try{
-            let response = await fetch("https://jujutsu-kaisen-website.onrender.com/api/setdate", {
+            let response = await fetch(`${CONFIG.API_URL}/api/setdate`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

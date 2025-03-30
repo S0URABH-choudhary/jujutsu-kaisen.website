@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onload="loaddate()">
     <div class="main">
       <nav>
         <a href="#">anime</a>
@@ -118,11 +118,9 @@
         <div class="col3">
           <h1>呪術廻戦</h1>
           <div class="release-date">
-            <div class="heading">NEW EPISODE</div>
-            <div class="date" style="font-size: 60px; font-weight: 600">21</div>
-            <div class="month" style="font-size: 60px; font-weight: 600">
-              FEB
-            </div>
+            <div class="heading">NEXT&nbsp; EPISODE</div>
+            <div class="date" id="date" style="font-size: 60px; font-weight: 600"><!--27--></div>
+            <div class="month" id="month" style="font-size: 60px; font-weight: 600"><!-- FEB --></div>
           </div>
           <div class="episodes">
             <div class="continue-btn-container">
@@ -146,6 +144,7 @@
         </div>
       </div>
     </div>
+    <script src="./pages/Adminpannel/config.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

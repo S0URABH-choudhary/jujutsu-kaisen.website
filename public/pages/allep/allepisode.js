@@ -3,7 +3,7 @@ let allepisodeContainer = document.getElementById("allepisode-container");
 
 async function  episodeloader (){
   try{
-    let response = await fetch("https://jujutsu-kaisen-website.onrender.com/api/episodes");
+    let response = await fetch(`${CONFIG.API_URL}/api/episodes`);
     const data = await response.json();
     data.map(episodes =>{
       let episode = document.createElement("div");
