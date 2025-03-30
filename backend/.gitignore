@@ -3,6 +3,7 @@ node_modules/
 
 # ignore's environment variables
 .env
+../public/pages/.ENV
 
 # ignore's log files
 logs/

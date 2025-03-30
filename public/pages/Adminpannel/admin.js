@@ -52,7 +52,7 @@ form.addEventListener("submit", async function (event) {
 
 let dateform = document.getElementById("dateform");
 
-dateform.addEventListener("submit", (event) => {
+dateform.addEventListener("submit", async (event) => {
     event.preventDefault();
     let releasedate = document.getElementById("episode-release-date").value;
     if (releasedate) {
@@ -61,15 +61,31 @@ dateform.addEventListener("submit", (event) => {
         const date = dateobject.getDate();
         const month = monthNames[dateobject.getMonth()];
         
-        const data = [ date, month]
+        const data = {date, month}
 
         try{
-            
+            let response = await fetch("https://jujutsu-kaisen-website.onrender.com/api/setdate", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
 
-        }catch{
+            let result = await response.json();
+            console.log("server responce:" ,result);
+
+            if(response.ok){
+                alert("Date is set successfully")
+                dateform.reset()
+            } else {
+                alert("Error: " + result.message);
+            }     
+
+        }catch(error){
+            console.error("Error submiting form:" ,error)
 
         }
-
 
     }else{
         alert("date cannot be empty")

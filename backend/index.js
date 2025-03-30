@@ -17,7 +17,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/episodes", episodeRoutes);
-app.use("/setdate", setdateRoutes);
+app.use("/api/setdate", setdateRoutes);
 
 // Error Handling Middleware
 app.use(errorHandler);

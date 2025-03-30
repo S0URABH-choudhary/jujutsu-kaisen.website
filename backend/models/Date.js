@@ -5,6 +5,6 @@ const dateSchema = new mongoose.Schema({
     month: String
 });
 
-const DateModel = mongoose.model("Date", dateSchema);
+const ReleaseDate = mongoose.model("Date", dateSchema);
 
-module.exports =  DateModel;
+export default ReleaseDate;
