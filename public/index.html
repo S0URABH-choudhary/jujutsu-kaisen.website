@@ -12,6 +12,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
+    
   </head>
   <body onload="loaddate()">
     <div class="main">
@@ -20,30 +21,6 @@
         <a href="#">manga</a>
         <a href="#">merch</a>
       </nav>
-
-      <!-- Login Modal -->
-      <div id="loginModal" class="modal">
-        <div class="modal-content">
-          <span class="close" data-close="loginModal">&times;</span>
-          <h2 class="login-register-tittle">Login</h2>
-          <input type="text" placeholder="Username" />
-          <input type="password" placeholder="Password" />
-          <button class="login-register-submit-button">Submit</button>
-        </div>
-      </div>
-
-      <!-- Register Modal -->
-      <div id="registerModal" class="modal">
-        <div class="modal-content">
-          <span class="close" data-close="registerModal">&times;</span>
-          <h2 class="login-register-tittle">Register</h2>
-          <input type="text" placeholder="Username" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button class="login-register-submit-button">Submit</button>
-        </div>
-      </div>
-
       <div class="hero">
         <div class="col1">
           <div class="col1-top">
@@ -75,7 +52,7 @@
                 </div>
                 <div id="login-form-button-container">
                   <button id="loginBtn">Login</button>
-                  <button id="registerBtn">Register</button>
+                  <button id="logoutBtn" style="display: none;">logout</button>
                 </div>
               </div>
             </div>
@@ -144,7 +121,11 @@
         </div>
       </div>
     </div>
+    
+   
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
     <script src="./pages/Adminpannel/config.js"></script>
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
+
   </body>
 </html>
