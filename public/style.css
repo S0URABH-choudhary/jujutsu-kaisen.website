@@ -528,6 +528,16 @@ button {
     color: black;
 }
 
+
+.hidden {
+    display: none;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+
 @media (width <= 768px) {
     
     .main{
