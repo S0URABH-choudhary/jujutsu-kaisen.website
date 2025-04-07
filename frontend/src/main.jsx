@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react';
 import Allepisode from '../pages/Allepisode.jsx'
-import AdminPanel from '../pages/adminpannel.jsx'
+import AdminPanel from '../pages/Adminpannel.jsx'
 import './index.css'
 import App from './App.jsx'
 
