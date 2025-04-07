@@ -1,109 +1,116 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root{
-    --primary-color:#32292A;
-    --secondary-color:#4F4544;
-    --tertiory-color:#B92A1C;
-}
-body{
+  }
+  
+  :root {
+    --primary-color: #32292A;
+    --secondary-color: #4F4544;
+    --tertiary-color: #B92A1C;
+  }
+  
+  body {
     background-color: var(--primary-color);
     color: white;
-    height: 100%;
     width: 100%;
-}
-body::-webkit-scrollbar{
+  }
+  
+  body::-webkit-scrollbar {
     display: none;
-}
-#allepisode-container {
+  }
+  
+  .allepisode-container {
     --number-of-columns: 4;
     display: grid;
     grid-template-columns: repeat(var(--number-of-columns), minmax(0, 1fr));
-    grid-gap: 1.5rem;
-    padding: 1rem 2rem;
     gap: 1.5rem;
-}
-#jjk-tittle{
+    padding: 1rem 2rem;
+  }
+  
+  .jjk-tittle {
     position: sticky;
     display: flex;
     align-items: center;
     padding: 30px;
     height: 50px;
     background-color: var(--secondary-color);
-}
-#episode-container{
+  }
+  
+  .episode-container {
     position: relative;
-    transition-property: border;
-}
-#episode-container:hover{
+    height: 300px;
+  }
+  
+  .episode-container:hover {
     border: 1px solid rgb(143, 132, 132);
-    
-}
-.episode-thumbnail{
+  }
+  
+  .episode-thumbnail {
     object-fit: cover;
-    object-position: center;
+    object-position: top;
     border-radius: 5px;
     height: 60%;
     cursor: pointer;
     width: 100%;
-}
-.episode-details{
+  }
+  .episode-details {
     position: relative;
     height: 40%;
     width: 100%;
     line-height: 1.9rem;
-}
-.episode-details h2{
+  }
+  
+  .episode-details h2 {
     font-size: 130%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-weight:  lighter;
-}
-
-.episode-details h4{
+    font-weight: lighter;
+  }
+  
+  .episode-details h4 {
     font-weight: lighter;
     color: rgba(245, 245, 245, 0.556);
-}
-.episode-details h3{
-    margin-top: 8px;
-}
-.episode-details i{
+  }
+  
+  .episode-Details i {
     position: absolute;
     right: 0;
     bottom: 0;
     margin: 6px;
-}
-
-
-@media screen and (width <= 600px) {
-    body{
-        max-width: max-content;
+  }
+  .left-arrow{
+    fill: white;
+    transform: rotateY(180deg);
+    height: 30px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .allepisode-container {
+      --number-of-columns: 1;
+      padding: 1.5rem;
     }
-    #allepisode-container{
-        --number-of-columns: 1;
-        padding: 1.5rem;
-        
+    
+    .jjkTitle {
+      width: 100vw;
+      padding: 20px;
     }
-    #jjk-tittle{
-        width: 100vw;
-        padding: 20px;
+    
+    .episode-container {
+      display: flex;
+      height: 100px;
+      gap: 10px;
     }
-
-    #episode-container{
-        display: flex;
-        gap: 10px;
+  
+    .episode-thumbnail {
+      height: 100%;
+      width: 40%;
     }
-    .episode-thumbnail{
-        height: 100%;
-        width: 40%;
+  
+    .episode-details {
+      height: 100%;
+      width: 60%;
     }
-    .episode-details{
-        height: 100%;
-        width: 60%;
-    }
-
-}
+  }
+  

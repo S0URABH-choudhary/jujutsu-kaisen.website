@@ -5,6 +5,7 @@ import Episode from "../models/Episode.js";
 // @access  Public
 export const addEpisode = async (req, res) => {
     try {
+        
         const newEpisode = new Episode(req.body);
         await newEpisode.save();
         res.status(201).json({ message: "Episode added successfully!", episode: newEpisode });

@@ -1,26 +1,27 @@
-*{
+:root {
+    --primary-color: #32292A;
+    --secondary-color: #4F4544;
+    --tertiary-color: #B92A1C;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,body{
+html, body {
     height: 100%;
     width: 100%;
 }
-:root{
-    --primary-color:#32292A;
-    --secondary-color:#4F4544;
-    --tertiory-color:#B92A1C;
-}
 
-main{
+.main {
     height: 100vh;
     width: 100vw;
     position: relative;
 }
 
-#addepisode-form{
+.addepisodeForm {
     --number-of-columns: 2;
     background-color: white;
     position: absolute;
@@ -31,53 +32,66 @@ main{
     padding: 20px;
     border: 1px solid black;
     border-radius: 5px;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     z-index: 99;
     display: none;
     text-align: center;
     gap: 1.5rem;
-    grid-template-columns: repeat(var(--number-of-columns) ,minmax(45px ,1fr));
+    display: grid;
+    grid-template-columns: repeat(var(--number-of-columns), minmax(45px, 1fr));
 }
-.close{
+
+.close {
     display: block;
-    font-size: larger;
+    font-size: x-large;
+    color: black;
     grid-column: 1 / span 2;
     justify-self: end;
     cursor: pointer;
 }
-#addepisode-form input,textarea{
+
+.addepisodeForm input,
+.addepisodeForm textarea {
     padding-inline: 20px;
 }
-#discription{
+
+.discription {
     grid-column: 1 / 3;
     padding: 10px;
 }
-#submit-buttom{
+
+.submitButton {
     grid-column: 1 / 3;
 }
-#dateform{
+
+.dateForm {
     position: absolute;
     top: 40%;
     left: 50%;
-    display: none;
-    transform: translate( -50% , -50%);
+    display: grid;
+    transform: translate(-50%, -50%);
     border: 1px solid black;
     background-color: white;
-    padding: 10px;
+    padding: 20px;
     gap: 20px;
 }
-#dateform h3,input{
+
+.dateForm h3,
+.dateForm input {
     font-size: larger;
 }
-#dateform button{
+
+.dateForm button {
     padding: 15px;
-    background-color: var(--tertiory-color);
+    background-color: var(--tertiary-color);
     color: white;
     border-radius: 5px;
     border: none;
 }
 
-nav{
+.nav {
+    position: relative;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -86,13 +100,13 @@ nav{
     padding: 20px 30px;
 }
 
-nav a{
+.nav a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: larger;
 }
 
-#controlls{
+.controlls {
     width: 100%;
     height: fit-content;
     position: relative;
@@ -102,39 +116,45 @@ nav a{
     padding: 16px 32px;
     gap: 15px;
 }
-#controlls button{
+
+.controlls button {
     cursor: pointer;
 }
 
-.button-controll{
+.buttonControll {
     padding: 10px 15px;
-    background-color: var(--tertiory-color);
+    background-color: var(--tertiary-color);
     outline: transparent;
     border: none;
     color: white;
     border-radius: 5px;
 }
-table {
-    font-family: arial, sans-serif;
+
+.table {
+    font-family: Arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-  }
-  td, th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-    .id-group{
-      text-align: center;
-      width: 50px;
-    }
-    .edit-icon{
-        color: rgb(15, 197, 15);
-        cursor: pointer;
-        margin-left: 10px;
-    }
-    .delete-icon{
-        color: rgb(219, 6, 6);
-        cursor: pointer;
-        margin-left: 10px;
-    }
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.idGroup {
+    text-align: center;
+    width: 50px;
+}
+
+.editIcon {
+    color: rgb(15, 197, 15);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.deleteIcon {
+    color: rgb(219, 6, 6);
+    cursor: pointer;
+    margin-left: 10px;
+}

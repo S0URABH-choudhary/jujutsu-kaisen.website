@@ -3,17 +3,35 @@ import "./App.css";
 import sukunaImage from "./assets/Sukuna (1).jpeg";
 import placeholderImage from "./assets/placeholder-img.png";
 import sukunaPng from "./assets/sukuna-png.png";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import LoginButton from "../components/LoginButton";
 
 const App = () => {
+  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   const [profilePic, setProfilePic] = useState(placeholderImage);
   const [date, setDate] = useState(27);
   const [month, setMonth] = useState("FEB");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [language, setLanguage] = useState("EN");
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     loaddate();
   }, []);
+
+  useEffect(() => {
+    if (isAuthenticated && user) {
+      const userRoles = user?.["https://your-app.com/roles"] || [];
+
+      if (userRoles.includes("admin")) {
+        navigate("/adminpannel"); // Redirect Admin to Admin Panel
+      } else {
+        navigate("/"); // Redirect Non-Admin to Home
+      }
+    }
+  }, [isAuthenticated, user, navigate]);
 
   const loaddate = async () => {
     try {
@@ -35,10 +53,6 @@ const App = () => {
     setLanguage((prev) => (prev === "EN" ? "RU" : "EN"));
   };
 
-  const showAllEpisodes = () => {
-    window.location.href = "./pages/allep/allepisode.html";
-  };
-
   return (
     <div className="main">
       <nav>
@@ -55,15 +69,9 @@ const App = () => {
             <div className="profil-container">
               <div className="profile">
                 <div className="profile-image">
-                  <img src={profilePic} alt="profile" className="profile-pic" onClick={changeProfileImage} />
+                  <img src={isAuthenticated ? user.picture : profilePic} alt="profile" className="profile-pic" onClick={changeProfileImage} />
                 </div>
-                <div className="login-form-button-container">
-                  {isLoggedIn ? (
-                    <button onClick={() => setIsLoggedIn(false)}>Logout</button>
-                  ) : (
-                    <button onClick={() => setIsLoggedIn(true)}>Login</button>
-                  )}
-                </div>
+                <LoginButton />
               </div>
             </div>
           </div>
@@ -96,6 +104,7 @@ const App = () => {
           </div>
         </div>
         <div className="col3">
+          <LoginButton position="absolute" top=".5%" right="2%" backgroundColor="var(--primary-color)" zIndex="1000" hide="hide-on-largescreen"/>
           <h1>呪術廻戦</h1>
           <div className="release-date">
             <div className="heading">NEXT EPISODE</div>
@@ -106,9 +115,9 @@ const App = () => {
             <div className="continue-btn-container">
               <button>CONTINUE</button>
             </div>
-            <div className="episode-container"><div className="episode"></div></div>
-            <div className="all-ep-button-container" onClick={showAllEpisodes}>
-              <link to="/allep">ALL EPISODES</link>
+            <div className="episode-Container"><div className="episode"></div></div>
+            <div className="all-ep-button-container">
+              <button><Link to="/allep">ALL EPISODES</Link></button>
             </div>
           </div>
           <div className="col3-container">
